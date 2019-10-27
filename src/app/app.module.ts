@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material';
+import { TabBarComponent } from './components/tab-bar/tab-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TabBarComponent
   ],
   imports: [
     BrowserModule,
