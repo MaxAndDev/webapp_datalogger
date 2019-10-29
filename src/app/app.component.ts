@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'datalogger';
+
+
+  navLinks = [
+    { path: 'general', label: 'General'},
+    { path: 'temperature', label: 'Temperature'},
+    { path: 'airpressure', label: 'Airpressure'},
+    { path: 'humidity', label: 'Humidity'}
+  ];
 }

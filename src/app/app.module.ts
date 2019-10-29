@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material';
-import { TabBarComponent } from './components/tab-bar/tab-bar.component';
+import { GeneralComponent } from './components/general/general.component';
+import { TemperatureComponent } from './components/temperature/temperature.component';
+import { AirpressureComponent } from './components/airpressure/airpressure.component';
+import { HumidityComponent } from './components/humidity/humidity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabBarComponent
+    GeneralComponent,
+    TemperatureComponent,
+    AirpressureComponent,
+    HumidityComponent,
   ],
   imports: [
     BrowserModule,
