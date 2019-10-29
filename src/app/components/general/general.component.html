@@ -1,1 +1,7 @@
-<p>general works!</p>
+<div  class="center" *ngIf="loadingIndicator else loaded">
+    <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #loaded>
+    loaded
+</ng-template>

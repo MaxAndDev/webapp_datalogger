@@ -14,6 +14,7 @@ export class GeneralComponent implements OnInit {
   ) { }
 
   data: LogDataArray;
+  loadingIndicator = true;
 
   ngOnInit() {
     this.getData();
@@ -23,6 +24,7 @@ export class GeneralComponent implements OnInit {
     this.dataService.getData()
       .subscribe(data => {
         this.data = data;
+        this.loadingIndicator = false;
         console.log(data);
       });
   }
