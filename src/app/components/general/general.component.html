@@ -2,6 +2,25 @@
     <mat-spinner></mat-spinner>
 </div>
 
-<ng-template #loaded>
-    loaded
+<ng-template #loaded>    
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+        <ng-container matColumnDef="userId">
+            <th mat-header-cell *matHeaderCellDef>UserId</th>
+            <td mat-cell *matCellDef="let data">{{data.userId}}</td>
+        </ng-container>
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>id</th>
+            <td mat-cell *matCellDef="let data">{{data.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>title</th>
+            <td mat-cell *matCellDef="let data">{{data.title}}</td>
+        </ng-container>
+        <ng-container matColumnDef="body">
+            <th mat-header-cell *matHeaderCellDef>body</th>
+            <td mat-cell *matCellDef="let data">{{data.body}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 </ng-template>

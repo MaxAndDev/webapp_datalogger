@@ -4,7 +4,11 @@ import {MatButtonModule,
         MatToolbarModule,
         MatIconModule,
         MatTabsModule,
-        MatProgressSpinnerModule} from '@angular/material';
+        MatProgressSpinnerModule,
+        MatListModule,
+        MatCardModule,
+        MatDividerModule,
+        MatTableModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -15,7 +19,11 @@ import { NgModule } from '@angular/core';
         MatToolbarModule,
         MatIconModule,
         MatTabsModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatListModule,
+        MatCardModule,
+        MatDividerModule,
+        MatTableModule
     ],
     exports: [
         MatButtonModule,
@@ -24,7 +32,11 @@ import { NgModule } from '@angular/core';
         MatToolbarModule,
         MatIconModule,
         MatTabsModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatListModule,
+        MatCardModule,
+        MatDividerModule,
+        MatTableModule
     ]
 })
 export class MaterialModule { }
