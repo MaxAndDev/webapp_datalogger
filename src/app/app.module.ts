@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChartsModule } from 'ng2-charts';
 
 import { MaterialModule } from './material';
 import { GeneralComponent } from './components/general/general.component';
@@ -29,7 +30,8 @@ import { NumbersComponent } from './components/shared/numbers/numbers.component'
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
