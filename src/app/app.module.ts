@@ -14,6 +14,7 @@ import { TemperatureComponent } from './components/temperature/temperature.compo
 import { AirpressureComponent } from './components/airpressure/airpressure.component';
 import { HumidityComponent } from './components/humidity/humidity.component';
 import { NumbersComponent } from './components/shared/numbers/numbers.component';
+import { LinechartComponent } from './components/shared/linechart/linechart.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NumbersComponent } from './components/shared/numbers/numbers.component'
     AirpressureComponent,
     HumidityComponent,
     NumbersComponent,
+    LinechartComponent,
   ],
   imports: [
     BrowserModule,
