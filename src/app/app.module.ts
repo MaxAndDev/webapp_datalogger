@@ -12,6 +12,7 @@ import { GeneralComponent } from './components/general/general.component';
 import { TemperatureComponent } from './components/temperature/temperature.component';
 import { AirpressureComponent } from './components/airpressure/airpressure.component';
 import { HumidityComponent } from './components/humidity/humidity.component';
+import { NumbersComponent } from './components/shared/numbers/numbers.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HumidityComponent } from './components/humidity/humidity.component';
     TemperatureComponent,
     AirpressureComponent,
     HumidityComponent,
+    NumbersComponent,
   ],
   imports: [
     BrowserModule,
