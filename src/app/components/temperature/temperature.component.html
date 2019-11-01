@@ -19,17 +19,7 @@
                 </mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                    <div>
-                            <div style="display: block">
-                              <canvas baseChart
-                                      [datasets]="barChartData"
-                                      [labels]="barChartLabels"
-                                      [options]="barChartOptions"
-                                      [legend]="barChartLegend"
-                                      [chartType]="barChartType">
-                              </canvas>
-                            </div>
-                          </div>
+                <app-linechart [parameter]=Temperature></app-linechart>
             </mat-card-content>
         </mat-card>
     </div>

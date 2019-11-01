@@ -1,1 +1,17 @@
-<p>linechart works!</p>
+<div  class="center" *ngIf="loadingIndicator else loaded">
+  <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #loaded>
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+</ng-template>
