@@ -35,9 +35,9 @@ export class LinechartComponent implements OnInit {
     console.log(this.parameter);
     setTimeout(() => {
       this.loadingIndicator = false;
-      this.barChartLabels = ['2023', '2307', '2068', '2089', '2040', '5011', '7012'];
+      this.barChartLabels = ['2023', '2307', '2068', '2089', '2040', '5011', '7012', '1234', '654', '6564'];
       this.barChartData = [
-        {data: [43, 69, 77, 81, 56, 55, 10], label: 'Temperature'}
+        {data: [43, 69, 77, 81, 56, 55, 10, 45, 65, 87], label: 'Temperature'}
       ];
       console.log(this.barChartLabels);
     }, 2000);

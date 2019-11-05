@@ -5,14 +5,17 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 // TODO:adapt interface for real data
 export interface LogDataEntry {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
+  _id: string;
+  station_id: number;
+  airpressure: number;
+  humidity: number;
+  temperature: number;
+  timestamp: number;
 }
 
 export interface LogDataArray {
-  logdata: Array<LogDataArray>;
+  count: number;
+  data: Array<LogDataEntry>;
 }
 
 @Injectable({
@@ -21,14 +24,15 @@ export interface LogDataArray {
 export class DataService {
 
   // TODO:adapt URL
-  private url = 'https://jsonplaceholder.typicode.com/posts';
+  // private url = 'https://jsonplaceholder.typicode.com/posts';
+  private urlReal = 'http://localhost:3000/data';
 
   constructor(
     private http: HttpClient,
   ) { }
 
   getData(): Observable<LogDataArray> {
-    return this.http.get<LogDataArray>(this.url);
+    return this.http.get<LogDataArray>(this.urlReal);
   }
 
 }

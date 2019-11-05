@@ -14,7 +14,7 @@ export class GeneralComponent implements OnInit {
 
   data: LogDataArray;
   loadingIndicator = true;
-  displayedColumns: string[] = ['userId', 'id', 'title', 'body'];
+  displayedColumns: string[] = ['station_id', 'airpressure', 'humidity', 'temperature', 'timestamp'];
 
   ngOnInit() {
     this.getData();
