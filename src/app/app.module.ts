@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChartsModule } from 'ng2-charts';
 
 import { MaterialModule } from './material';
 import { GeneralComponent } from './components/general/general.component';
@@ -13,6 +14,7 @@ import { TemperatureComponent } from './components/temperature/temperature.compo
 import { AirpressureComponent } from './components/airpressure/airpressure.component';
 import { HumidityComponent } from './components/humidity/humidity.component';
 import { NumbersComponent } from './components/shared/numbers/numbers.component';
+import { LinechartComponent } from './components/shared/linechart/linechart.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { NumbersComponent } from './components/shared/numbers/numbers.component'
     AirpressureComponent,
     HumidityComponent,
     NumbersComponent,
+    LinechartComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { NumbersComponent } from './components/shared/numbers/numbers.component'
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

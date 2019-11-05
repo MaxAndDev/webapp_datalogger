@@ -8,7 +8,6 @@ import { DataService, LogDataArray } from 'src/app/services/data.service';
   styleUrls: ['./general.component.scss']
 })
 export class GeneralComponent implements OnInit {
-
   constructor(
     private dataService: DataService
   ) { }
