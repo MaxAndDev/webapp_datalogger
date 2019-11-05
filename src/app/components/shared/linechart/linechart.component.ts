@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService, LogDataArray } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-linechart',
@@ -10,7 +11,7 @@ export class LinechartComponent implements OnInit {
 
   @Input() parameter: string;
 
-  constructor( private dataService: DataService) { }
+  constructor( private dataService: DataService, private router: Router) { }
 
   loadingIndicator = true;
 
@@ -31,17 +32,29 @@ export class LinechartComponent implements OnInit {
   data: LogDataArray;
 
   ngOnInit() {
-    this.getData();
+    const origin = this.router.url;
+    this.getData(origin.split('/')[1]);
   }
 
-  getData(): void {
+  getData(origin): void {
     this.dataService.getData()
       .subscribe(data => {
         this.barChartLabels = [];
-        this.barChartData = [{data: [], label: 'Temperatur'}];
+        this.barChartData = [{data: [], label: origin.replace(/^./, origin[0].toUpperCase())}];
         data.data.forEach(element => {
           const currentdate = new Date(element.timestamp);
-          const currentvalue = element.temperature;
+          let currentvalue: number;
+          switch (origin) {
+            case 'temperature':
+                currentvalue = element.temperature;
+                break;
+            case 'humidity':
+                currentvalue = element.humidity;
+                break;
+            case 'airpressure':
+                currentvalue = element.airpressure;
+                break;
+          }
           this.barChartLabels.push(currentdate.toString());
           this.barChartData[0].data.push(currentvalue);
         });
