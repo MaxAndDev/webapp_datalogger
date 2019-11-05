@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DataService, LogDataArray } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-linechart',
@@ -9,7 +10,7 @@ export class LinechartComponent implements OnInit {
 
   @Input() parameter: string;
 
-  constructor() { }
+  constructor( private dataService: DataService) { }
 
   loadingIndicator = true;
 
@@ -27,20 +28,26 @@ export class LinechartComponent implements OnInit {
     {data: [65, 59, 80, 81, 56, 55, 40], label: this.parameter}
   ];
 
-  // provide basic data at beginning
-  // change data after fetch to real data -> see onInit
-  // diagram changes automatically
+  data: LogDataArray;
 
   ngOnInit() {
-    console.log(this.parameter);
-    setTimeout(() => {
-      this.loadingIndicator = false;
-      this.barChartLabels = ['2023', '2307', '2068', '2089', '2040', '5011', '7012', '1234', '654', '6564'];
-      this.barChartData = [
-        {data: [43, 69, 77, 81, 56, 55, 10, 45, 65, 87], label: 'Temperature'}
-      ];
-      console.log(this.barChartLabels);
-    }, 2000);
+    this.getData();
+  }
+
+  getData(): void {
+    this.dataService.getData()
+      .subscribe(data => {
+        this.barChartLabels = [];
+        this.barChartData = [{data: [], label: 'Temperatur'}];
+        data.data.forEach(element => {
+          const currentdate = new Date(element.timestamp);
+          const currentvalue = element.temperature;
+          this.barChartLabels.push(currentdate.toString());
+          this.barChartData[0].data.push(currentvalue);
+        });
+        console.log(data);
+        this.loadingIndicator = false;
+      });
   }
 
 }
