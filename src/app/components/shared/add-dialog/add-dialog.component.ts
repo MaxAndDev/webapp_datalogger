@@ -13,7 +13,7 @@ export class AddDialogComponent implements OnInit {
   }
 
   addDevice() {
-    // TODO: send informations to server and recive json file
+   
   }
 
 }
