@@ -10,7 +10,10 @@ import {MatButtonModule,
         MatDividerModule,
         MatTableModule,
         MatGridListModule,
-        MatDialogModule} from '@angular/material';
+        MatDialogModule,
+        MatInputModule
+    } from '@angular/material';
+
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -27,7 +30,8 @@ import { NgModule } from '@angular/core';
         MatDividerModule,
         MatTableModule,
         MatGridListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatInputModule
     ],
     exports: [
         MatButtonModule,
@@ -42,7 +46,8 @@ import { NgModule } from '@angular/core';
         MatDividerModule,
         MatTableModule,
         MatGridListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatInputModule
     ]
 })
 export class MaterialModule { }

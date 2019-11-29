@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
+import { AddDialogComponent } from './components/shared/add-dialog/add-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'datalogger';
 
+  constructor(public dialog: MatDialog) { }
+
 
   navLinks = [
     { path: 'general', label: 'General'},
@@ -16,7 +20,8 @@ export class AppComponent {
     { path: 'humidity', label: 'Humidity'}
   ];
 
+
   openAddDialog() {
-    
+    this.dialog.open(AddDialogComponent);
   }
 }

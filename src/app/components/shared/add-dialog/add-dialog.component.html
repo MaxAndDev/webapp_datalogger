@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Add new station</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-form-field>
+           <input matInput placeholder="Position Tag">
+         </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field >
+          <input matInput placeholder="Latitude">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Longitude">
+        </mat-form-field>
+    </div>
+
+</div>
+<div>
+    <button mat-button [mat-dialog-close] color = "primary">Close</button>
+    <button mat-button colot ="primary" [mat-dialog-close] (click)="addDevice()">Add Device</button>
+</div>
