@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { AddDialogComponent } from './components/shared/add-dialog/add-dialog.co
     HttpClientModule,
     FlexLayoutModule,
     ChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

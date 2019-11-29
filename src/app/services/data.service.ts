@@ -37,7 +37,7 @@ export class DataService {
   }
 
   postData(body): Observable<any> {
-    return this.http.post(this.urlStation + '/station', body );
+    return this.http.post(this.urlStation + '/add', body );
   }
 
 }
