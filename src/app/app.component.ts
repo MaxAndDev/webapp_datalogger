@@ -15,4 +15,8 @@ export class AppComponent {
     { path: 'airpressure', label: 'Airpressure'},
     { path: 'humidity', label: 'Humidity'}
   ];
+
+  openAddDialog() {
+    
+  }
 }
