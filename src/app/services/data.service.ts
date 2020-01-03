@@ -26,7 +26,9 @@ export class DataService {
   // TODO:adapt URL
   // private url = 'https://jsonplaceholder.typicode.com/posts';
   private urlReal = 'http://localhost:3000/data';
-  private urlStation = 'http://localhost:3000/station'
+  private urlStation = 'http://localhost:3000/station';
+  private urlNumbers = 'http://localhost:3000/numbers';
+
 
   constructor(
     private http: HttpClient,
@@ -38,6 +40,10 @@ export class DataService {
 
   postData(body): Observable<any> {
     return this.http.post(this.urlStation + '/add', body );
+  }
+
+  getNumbers(forParameter): Observable<any>{
+    return this.http.post(this.urlNumbers, { parameter: forParameter});
   }
 
 }

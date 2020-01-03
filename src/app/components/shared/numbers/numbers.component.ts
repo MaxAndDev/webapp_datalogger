@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-numbers',
@@ -10,9 +12,14 @@ export class NumbersComponent implements OnInit {
   @Input() minimum: number;
   @Input() average: number;
 
-  constructor() { }
+  constructor(private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
+    const origin = this.router.url;
+    this.dataService.getNumbers(origin.split('/')[1]).subscribe(data => {
+      console.log(data);
+    });
+
   }
 
 }
