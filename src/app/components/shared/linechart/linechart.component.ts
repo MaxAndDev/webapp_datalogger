@@ -55,7 +55,7 @@ export class LinechartComponent implements OnInit {
                 currentvalue = element.airpressure;
                 break;
           }
-          this.barChartLabels.push(currentdate.toString());
+          this.barChartLabels.push(currentdate.toLocaleDateString()); // ursprüunglich .toString()
           this.barChartData[0].data.push(currentvalue);
         });
         console.log(data);

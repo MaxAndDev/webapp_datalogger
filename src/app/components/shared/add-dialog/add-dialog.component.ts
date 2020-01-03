@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-add-dialog',
@@ -16,7 +17,7 @@ export class AddDialogComponent implements OnInit {
   // TODO: input validation via formcontroll
 
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -29,7 +30,11 @@ export class AddDialogComponent implements OnInit {
       position_tag: this.positionTag
    }).subscribe(data => {
      console.log(data);
+     this.snackBar.open('Created station successful!', null, {
+       duration: 2000
+     });
    });
   }
+
 
 }
