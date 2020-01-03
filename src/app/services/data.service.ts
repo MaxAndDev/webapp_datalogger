@@ -26,6 +26,7 @@ export class DataService {
   // TODO:adapt URL
   // private url = 'https://jsonplaceholder.typicode.com/posts';
   private urlReal = 'http://localhost:3000/data';
+  private urlStation = 'http://localhost:3000/station'
 
   constructor(
     private http: HttpClient,
@@ -33,6 +34,10 @@ export class DataService {
 
   getData(): Observable<LogDataArray> {
     return this.http.get<LogDataArray>(this.urlReal);
+  }
+
+  postData(body): Observable<any> {
+    return this.http.post(this.urlStation + '/add', body );
   }
 
 }

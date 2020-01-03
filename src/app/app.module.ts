@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AirpressureComponent } from './components/airpressure/airpressure.compo
 import { HumidityComponent } from './components/humidity/humidity.component';
 import { NumbersComponent } from './components/shared/numbers/numbers.component';
 import { LinechartComponent } from './components/shared/linechart/linechart.component';
+import { AddDialogComponent } from './components/shared/add-dialog/add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { LinechartComponent } from './components/shared/linechart/linechart.comp
     HumidityComponent,
     NumbersComponent,
     LinechartComponent,
+    AddDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +36,11 @@ import { LinechartComponent } from './components/shared/linechart/linechart.comp
     MaterialModule,
     HttpClientModule,
     FlexLayoutModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddDialogComponent]
 })
 export class AppModule { }
