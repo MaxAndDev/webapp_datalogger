@@ -17,6 +17,7 @@ import { HumidityComponent } from './components/humidity/humidity.component';
 import { NumbersComponent } from './components/shared/numbers/numbers.component';
 import { LinechartComponent } from './components/shared/linechart/linechart.component';
 import { AddDialogComponent } from './components/shared/add-dialog/add-dialog.component';
+import { ConfigPresenterDialogComponent } from './components/shared/config-presenter-dialog/config-presenter-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AddDialogComponent } from './components/shared/add-dialog/add-dialog.co
     NumbersComponent,
     LinechartComponent,
     AddDialogComponent,
+    ConfigPresenterDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,6 @@ import { AddDialogComponent } from './components/shared/add-dialog/add-dialog.co
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AddDialogComponent]
+  entryComponents: [AddDialogComponent, ConfigPresenterDialogComponent]
 })
 export class AppModule { }

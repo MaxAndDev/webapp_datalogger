@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Station Config Data</h1>
+<div mat-dialog-content>
+<p>
+    Copy this and save as config.json to your local machine!
+</p>
+<div class="divBackground">
+    <section class="mat-typography">
+        <h2>api_key: {{apikey}}</h2>
+        <h2>station_id: {{stationId}}</h2>
+        <h2>secret: {{secret}}</h2>
+    </section>
+</div>
+</div>
+<div>
+    <button mat-button [mat-dialog-close] color = "primary">Close</button>
+    <button mat-button colot ="primary" [mat-dialog-close] (click)="addDevice()">Add Device</button>
+</div>
+
