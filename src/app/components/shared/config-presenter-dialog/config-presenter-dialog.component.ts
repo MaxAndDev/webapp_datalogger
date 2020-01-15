@@ -24,5 +24,4 @@ export class ConfigPresenterDialogComponent implements OnInit {
 
 
 
-
 }

@@ -42,7 +42,7 @@ export class LinechartComponent implements OnInit {
         this.barChartLabels = [];
         this.barChartData = [{data: [], label: origin.replace(/^./, origin[0].toUpperCase())}];
         data.data.forEach(element => {
-          const currentdate = new Date(element.timestamp);
+          const currentdate = new Date(element.timestamp * 1000);
           let currentvalue: number;
           switch (origin) {
             case 'temperature':
@@ -55,7 +55,7 @@ export class LinechartComponent implements OnInit {
                 currentvalue = element.airpressure;
                 break;
           }
-          this.barChartLabels.push(currentdate.toLocaleDateString()); // ursprüunglich .toString()
+          this.barChartLabels.push(currentdate.toLocaleTimeString() ); // ursprüunglich .toString()
           this.barChartData[0].data.push(currentvalue);
         });
         console.log(data);
